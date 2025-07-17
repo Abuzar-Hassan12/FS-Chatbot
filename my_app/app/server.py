@@ -20,11 +20,11 @@ sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 app = FastAPI(openapi_url=None, docs_url=None)
 
 # Mount static directory for css/js
-app.mount("/my_app/app/static", StaticFiles(directory="my_app/app/static"), name="static")
+app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 @app.get("/", response_class=HTMLResponse)
 async def serve_ui():
-    with open("my_app/app/templates/index.html", "r", encoding="utf-8") as file:
+    with open("templates/index.html", "r", encoding="utf-8") as file:
         html_content = file.read()
     return HTMLResponse(content=html_content)
 
