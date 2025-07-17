@@ -7,7 +7,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from langserve import add_routes
-from app.training import chain as training_chain
+from training import chain as training_chain
 import markdown as md
 
 # Set up project root and load .env
